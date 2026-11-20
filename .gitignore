@@ -1,0 +1,6 @@
+telegram_token.txt
+telegram_password.txt
+telegram.json
+__pycache__/
+*.pyc
+.env

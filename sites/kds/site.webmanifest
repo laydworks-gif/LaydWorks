@@ -1,0 +1,21 @@
+{
+  "name": "KDS Detailing Studio — запис (демо)",
+  "short_name": "KDS Detailing",
+  "lang": "uk",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#EEF2EA",
+  "theme_color": "#EEF2EA",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

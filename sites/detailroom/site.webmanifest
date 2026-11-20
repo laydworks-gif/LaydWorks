@@ -1,0 +1,21 @@
+{
+  "name": "Детейлинг Detail room Dnepr — запис (демо)",
+  "short_name": "Детейлинг Deta",
+  "lang": "uk",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#F1F2EF",
+  "theme_color": "#F1F2EF",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
