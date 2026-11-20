@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="uk">
+<head>
+{{head}}
+<style>
+{{css}}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#book">До запису</a>
+<header class="top wrap">
+  <a class="brand" href="#top" translate="no">AutoPolish <small>Дніпро</small></a>
+  <a class="top__tel" href="tel:+380683481031">+380&nbsp;68&nbsp;348&nbsp;1031</a>
+</header>
+
+<main id="main">
+<section class="hero wrap" aria-labelledby="h1">
+  <div class="hero__copy">
+    <h1 id="h1">{{h1}}</h1>
+    <p class="hero__sub">{{sub}}</p>
+    <div class="hero__cta">
+      <a class="btn" href="#book">Записатися</a>
+      <a class="btn btn--ghost" href="tel:+380683481031">+380&nbsp;68&nbsp;348&nbsp;1031</a>
+    </div>
+    <p class="hero__rate"><a href="{{maps}}" target="_blank" rel="noopener"><span class="star" aria-hidden="true">★</span> 4,9 · 110&nbsp;відгуків на Google Maps</a></p>
+  </div>
+  <figure class="hero__media">
+    <img src="/images/hero-1200.webp" srcset="/images/hero-800.webp 800w, /images/hero-1200.webp 1200w, /images/hero-1600.webp 1600w" sizes="{{hero_sizes}}" width="1600" height="893" alt="Полірування кузова: майстер працює дисковою машинкою" fetchpriority="high" decoding="async">
+  </figure>
+</section>
+
+<section class="sec book" aria-labelledby="book-h">
+  <div class="wrap book__grid">
+    <div class="book__lead">
+      <h2 id="book-h">Запис</h2>
+      <ol class="how" aria-label="Як це працює">
+        <li><b>1</b>Ви залишаєте заявку</li>
+        <li><b>2</b>Майстер дивиться фото</li>
+        <li><b>3</b>Погоджуєте вартість і час</li>
+      </ol>
+    </div>
+
+    <div class="wiz" id="book" role="group" aria-labelledby="wiz-label">
+    <p class="sr" id="wiz-label">Запис на детейлінг у 4 кроки</p>
+    <noscript>
+      <style>.wiz .wsteps,.wiz form{display:none}</style>
+      <p class="nojs">Для онлайн-запису потрібен JavaScript. Зателефонуйте <a href="tel:+380683481031">+380&nbsp;68&nbsp;348&nbsp;1031</a> або напишіть в <a href="https://www.instagram.com/auto_polish_dp/" rel="noopener">Instagram</a>.</p>
+    </noscript>
+    <ol class="wsteps" id="wsteps" aria-label="Кроки запису">
+      <li><button type="button" data-go="1"><b>1</b><span>Послуги</span></button></li>
+      <li><button type="button" data-go="2"><b>2</b><span>Авто</span></button></li>
+      <li><button type="button" data-go="3"><b>3</b><span>Час</span></button></li>
+      <li><button type="button" data-go="4"><b>4</b><span>Контакти</span></button></li>
+    </ol>
+
+    <form id="bf" novalidate>
+      <section class="wstep" data-step="1" aria-labelledby="w1">
+        <h2 id="w1" tabindex="-1">Що потрібно зробити?</h2>
+        <div class="opts" id="rows" role="group" aria-labelledby="w1"></div>
+        <div class="err" id="e-svc"></div>
+      </section>
+
+      <section class="wstep" data-step="2" aria-labelledby="w2" hidden>
+        <h2 id="w2" tabindex="-1">Яке у вас авто?</h2>
+        <div class="field">
+          <label for="f-car">Марка й модель</label>
+          <input type="text" id="f-car" name="car" autocomplete="off" placeholder="Наприклад, Toyota RAV4…" aria-describedby="e-car">
+          <div class="err" id="e-car"></div>
+        </div>
+        <fieldset class="field">
+          <legend>Тип кузова</legend>
+          <div class="chips c3">
+            <label class="chip"><input type="radio" name="cls" value="sedan" checked><span>Седан<small>хетчбек</small></span></label>
+            <label class="chip"><input type="radio" name="cls" value="cross"><span>Кросовер</span></label>
+            <label class="chip"><input type="radio" name="cls" value="suv"><span>Великий<small>SUV, бус</small></span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <span class="lbl">Фото авто <em>необов’язково</em></span>
+          <div class="drop" id="drop">
+            <input type="file" id="file" accept="image/*" multiple>
+            <label class="btn btn--ghost" for="file">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Додати фото
+            </label>
+            <span class="drop__t">або перетягніть сюди</span>
+          </div>
+          <ul class="thumbs" id="thumbs" aria-label="Додані фото"></ul>
+          <p class="ph-count" id="ph-count" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="wstep" data-step="3" aria-labelledby="w3" hidden>
+        <h2 id="w3" tabindex="-1">Коли вам зручно?</h2>
+        <fieldset class="field">
+          <legend>День</legend>
+          <div class="chips days" id="days"></div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Час <em>точний час напише майстер</em></legend>
+          <div class="chips c3">
+            <label class="chip"><input type="radio" name="time" value="до обіду"><span>До обіду</span></label>
+            <label class="chip"><input type="radio" name="time" value="після обіду"><span>Після обіду</span></label>
+            <label class="chip"><input type="radio" name="time" value="будь-який час" checked><span>Не важливо</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="wstep" data-step="4" aria-labelledby="w4" hidden>
+        <h2 id="w4" tabindex="-1">Як з вами зв’язатися?</h2>
+        <p class="recap" id="recap"></p>
+        <div class="fields">
+          <div class="field">
+            <label for="f-name">Ім’я</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" aria-describedby="e-name">
+            <div class="err" id="e-name"></div>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input type="tel" id="f-phone" name="tel" autocomplete="tel" inputmode="tel" placeholder="+380 …" aria-describedby="e-phone">
+            <div class="err" id="e-phone"></div>
+          </div>
+        </div>
+        <fieldset class="field">
+          <legend>Де вам відповісти</legend>
+          <div class="chips c3">
+            <label class="chip"><input type="radio" name="via" value="Telegram" checked><span>Telegram</span></label>
+            <label class="chip"><input type="radio" name="via" value="Viber"><span>Viber</span></label>
+            <label class="chip"><input type="radio" name="via" value="Телефонний дзвінок"><span>Дзвінок</span></label>
+          </div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label>Не заповнюйте це поле<input type="text" name="hp_url" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field">
+          <label for="f-note">Коментар <em>необов’язково</em></label>
+          <textarea id="f-note" name="note" autocomplete="off"></textarea>
+        </div>
+      </section>
+
+      <p class="status" id="status" role="alert" aria-live="assertive"></p>
+      <div class="wnav">
+        <button type="button" class="btn btn--ghost" id="w-back" hidden>Назад</button>
+        <button type="submit" class="btn" id="w-next">Далі</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</section>
+
+<section class="work" aria-labelledby="work-h">
+  <div class="work__head">
+    <div>
+      <h2 id="work-h">Роботи студії</h2>
+      
+    </div>
+    <div class="ctl">
+      <button type="button" data-prev aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" data-next aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="reel" data-reel>
+    <div class="reel__view" tabindex="0" role="group" aria-roledescription="карусель" aria-label="Фото робіт студії">
+      <div class="reel__track">
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Porsche Cayenne"><img src="/images/gallery-1.webp" loading="lazy" decoding="async" width="1200" height="900" alt="Чорний Porsche Cayenne у боксі студії" draggable="false"></button><figcaption>Porsche Cayenne</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Range Rover"><img src="/images/gallery-2.webp" loading="lazy" decoding="async" width="1200" height="1200" alt="Чорний Range Rover у світлому боксі студії" draggable="false"></button><figcaption>Range Rover</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Lexus"><img src="/images/gallery-3.webp" loading="lazy" decoding="async" width="1200" height="1200" alt="Чорний Lexus, глянцевий лак відбиває небо" draggable="false"></button><figcaption>Lexus</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Porsche Cayenne"><img src="/images/gallery-4.webp" loading="lazy" decoding="async" width="1200" height="900" alt="Porsche Cayenne мідного кольору, вид ззаду" draggable="false"></button><figcaption>Porsche Cayenne</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Mazda CX-5"><img src="/images/gallery-5.webp" loading="lazy" decoding="async" width="1200" height="900" alt="Mazda CX-5 на подвір’ї студії" draggable="false"></button><figcaption>Mazda CX-5</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: підкапотний простір"><img src="/images/gallery-6.webp" loading="lazy" decoding="async" width="1200" height="900" alt="Підкапотний простір Mazda з чистим двигуном" draggable="false"></button><figcaption>Підкапотний простір</figcaption></figure>
+        <figure class="reel__slide"><button type="button" class="open" aria-label="Відкрити фото: Audi"><img src="/images/gallery-7.webp" loading="lazy" decoding="async" width="787" height="1400" alt="Білий Audi, вид спереду" draggable="false"></button><figcaption>Audi</figcaption></figure>
+      </div>
+    </div>
+    <div class="reel__bar" aria-hidden="true"><div class="reel__thumb"></div></div>
+  </div>
+</section>
+
+<section class="sec rev" aria-labelledby="rev-h">
+  <div class="wrap rev__grid">
+    <div>
+      <h2 id="rev-h">Відгуки</h2>
+      <div class="score"><span aria-label="Рейтинг 4,9 з 5">4,9</span><small>на Google Maps,<br>110&nbsp;відгуків</small></div>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<section class="contact" aria-labelledby="contact-h">
+  <div class="wrap contact__grid">
+    <div>
+      <h2 id="contact-h">Як знайти студію</h2>
+      <dl>
+        <div><dt>Адреса</dt><dd>вул. Стара Пристань, 6, Дніпро</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+380683481031">+380&nbsp;68&nbsp;348&nbsp;1031</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/auto_polish_dp/" target="_blank" rel="noopener" translate="no">@auto_polish_dp</a></dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn btn--panel" href="#book">Записатися</a>
+        <a class="btn btn--ghost" href="{{maps}}" target="_blank" rel="noopener">Відкрити на карті</a>
+      </div>
+    </div>
+    <div class="contact__hours">
+      <div class="openst" data-openst aria-live="polite"><i aria-hidden="true"></i><span>Графік роботи</span></div>
+      <table class="hours"><caption class="sr">Графік роботи</caption><tbody id="hours">{{hours_rows}}</tbody></table>
+    </div>
+  </div>
+</section>
+</main>
+
+
+{{footer}}
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <a class="btn btn--ghost" href="tel:+380683481031">Подзвонити</a>
+    <a class="btn" href="#book">Записатися</a>
+  </div>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Перегляд фото">
+  <button type="button" class="nav" id="lb-prev" aria-label="Попереднє фото">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button type="button" class="nav" id="lb-next" aria-label="Наступне фото">›</button>
+  <button type="button" class="x" id="lb-x" aria-label="Закрити">×</button>
+</div>
+
+<script>
+{{js}}
+</script>
+</body>
+</html>
